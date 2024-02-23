@@ -1,5 +1,5 @@
 
-const categoryRoute = require('./CategoryRoutes');
+const categoryRoute = require('./categoryRoutes');
 const productRoute = require('./productRoutes');
 const subcategoryRoute = require('./subcategoryRoutes');
 const userRoute = require('./userRoute')
