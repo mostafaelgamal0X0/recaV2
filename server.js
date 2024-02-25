@@ -6,11 +6,19 @@ dotenv.config({path:'config.env'});
 const dbConnection=require('./config/DatabasConfig');
 const globaleError = require('./middleware/errMiddleware');
 const mountRoutes = require('./Routes/index')
+const cors = require('cors')
+const compression = require('compression')
 
 //connection with db
 dbConnection();
 
 const app=express();
+//Enable other domains to access your application
+app.use(cors())
+app.options('*', cors())
+
+app.use(compression())
+
 
 //middlewares
 app.use(express.json());
